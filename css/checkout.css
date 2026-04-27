@@ -1,0 +1,240 @@
+.checkout-section {
+    padding: 50px 0;
+    background: #f8fafc;
+}
+
+.checkout-grid {
+    display: grid;
+    grid-template-columns: 1fr 380px;
+    gap: 30px;
+}
+
+.checkout-form {
+    background: white;
+    border-radius: 24px;
+    padding: 30px;
+    border: 1px solid #eef2ff;
+}
+
+.form-step {
+    margin-bottom: 32px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #eef2ff;
+}
+
+.form-step:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.form-step h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #0f172a;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.step-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background: #f59e0b;
+    color: #0f172a;
+    border-radius: 50%;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.delivery-options,
+.payment-options {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.delivery-option,
+.payment-option {
+    display: flex;
+    align-items: center;
+    padding: 16px;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: 0.2s;
+    background: white;
+}
+
+.delivery-option:hover,
+.payment-option:hover {
+    border-color: #f59e0b;
+    background: #fffbeb;
+}
+
+.delivery-option input,
+.payment-option input {
+    margin-right: 15px;
+    accent-color: #f59e0b;
+}
+
+.delivery-option-content,
+.payment-option-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.delivery-option-content strong,
+.payment-option-content strong {
+    font-size: 15px;
+    color: #0f172a;
+}
+
+.delivery-option-content span,
+.payment-option-content span {
+    font-size: 12px;
+    color: #64748b;
+}
+
+.payment-option-content i {
+    font-size: 20px;
+    color: #f59e0b;
+    margin-bottom: 5px;
+}
+
+/* Сводка заказа */
+.order-summary {
+    background: white;
+    border-radius: 24px;
+    padding: 28px;
+    border: 1px solid #eef2ff;
+    height: fit-content;
+    position: sticky;
+    top: 20px;
+}
+
+.order-summary h3 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #f59e0b;
+    display: inline-block;
+}
+
+.summary-items {
+    margin-bottom: 20px;
+}
+
+.summary-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.item-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.item-name {
+    font-size: 14px;
+    font-weight: 500;
+    color: #0f172a;
+}
+
+.item-quantity {
+    font-size: 12px;
+    color: #64748b;
+}
+
+.item-price {
+    font-weight: 600;
+    color: #f59e0b;
+}
+
+.summary-totals {
+    border-top: 2px solid #eef2ff;
+    padding-top: 16px;
+}
+
+.total-line {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    font-size: 14px;
+    color: #475569;
+}
+
+.grand-total {
+    border-top: 1px solid #e2e8f0;
+    margin-top: 8px;
+    padding-top: 12px;
+    font-size: 20px;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.grand-total span:last-child {
+    color: #f59e0b;
+    font-size: 22px;
+}
+
+.place-order-btn {
+    width: 100%;
+    background: #f59e0b;
+    color: #0f172a;
+    border: none;
+    padding: 14px 24px;
+    border-radius: 40px;
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: 0.2s;
+}
+
+.place-order-btn:hover {
+    background: #d97706;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.back-to-cart {
+    display: block;
+    text-align: center;
+    margin-top: 16px;
+    color: #64748b;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+.back-to-cart:hover {
+    color: #f59e0b;
+}
+
+@media (max-width: 968px) {
+    .checkout-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .order-summary {
+        position: static;
+    }
+}
+
+@media (max-width: 768px) {
+    .checkout-form {
+        padding: 20px;
+    }
+    
+    .form-step h2 {
+        font-size: 18px;
+    }
+}

@@ -21,6 +21,11 @@
             <a href="mailto:ddsnab@mail.ru"><i class="fas fa-envelope"></i> ddsnab@mail.ru</a>
         </div>
         <div class="header-actions">
+               <div class="auth-links">
+                <a href="login.html" class="auth-link">Вход</a>
+                <span class="auth-divider">|</span>
+                <a href="register.html" class="auth-link active">Регистрация</a>
+            </div>
             <a href="profile.html" class="profile-icon"><i class="fas fa-user"></i></a>
             <a href="cart.html" class="cart-icon">
                 <i class="fas fa-shopping-cart"></i>
@@ -87,7 +92,7 @@
         </table>
         <div class="cart-summary">
             <p>Общая сумма: <span class="total">6496 ₽</span></p>
-            <button class="checkout-btn" onclick="alert('Макет: оформление заказа')">Оформить заказ</button>
+           <button class="checkout-btn" onclick="window.location.href='checkout.html'">Оформить заказ</button>
         </div>
     </div>
 </section>

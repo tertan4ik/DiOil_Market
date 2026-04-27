@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Оформление заказа | DiOil</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/checkout.css">
+</head>
+<body>
+
+<header class="header">
+    <div class="container header-container">
+        <div class="logo">
+            <img src="logo.png" alt="DiOil" class="logo-img">
+        </div>
+        <div class="header-contacts">
+            <a href="tel:+73437770078"><i class="fas fa-phone-alt"></i> +7 (343) 777-00-78</a>
+            <a href="mailto:ddsnab@mail.ru"><i class="fas fa-envelope"></i> ddsnab@mail.ru</a>
+        </div>
+        <div class="header-actions">
+            <div class="auth-links">
+                <a href="login.html" class="auth-link">Вход</a>
+                <span class="auth-divider">|</span>
+                <a href="register.html" class="auth-link">Регистрация</a>
+            </div>
+            <a href="profile.html" class="profile-icon"><i class="fas fa-user"></i></a>
+            <a href="cart.html" class="cart-icon">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count">3</span>
+            </a>
+        </div>
+    </div>
+</header>
+
+<nav class="navbar">
+    <div class="container nav-container">
+        <a href="index.html">Главная</a>
+        <a href="about.html">О компании</a>
+        <a href="products.html">Продукция</a>
+        <a href="index.html#contacts">Контакты</a>
+    </div>
+</nav>
+
+<section class="checkout-section">
+    <div class="container">
+        <h1 class="section-title">Оформление заказа</h1>
+        
+        <div class="checkout-grid">
+            <!-- Форма оформления -->
+            <div class="checkout-form">
+                <div class="form-step">
+                    <h2><span class="step-number">1</span> Контактная информация</h2>
+                    <div class="form-row">
+                        <div class="form-group half">
+                            <label>Имя *</label>
+                            <input type="text" id="firstName" value="Иван" placeholder="Ваше имя">
+                        </div>
+                        <div class="form-group half">
+                            <label>Фамилия *</label>
+                            <input type="text" id="lastName" value="Петров" placeholder="Ваша фамилия">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group half">
+                            <label>Email *</label>
+                            <input type="email" id="email" value="ivan@example.com" placeholder="Email">
+                        </div>
+                        <div class="form-group half">
+                            <label>Телефон *</label>
+                            <input type="tel" id="phone" value="+7 922 209-09-16" placeholder="Телефон">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-step">
+                    <h2><span class="step-number">2</span> Адрес доставки</h2>
+                    <div class="form-group">
+                        <label>Адрес *</label>
+                        <input type="text" id="address" value="г. Екатеринбург, ул. Примерная, д. 10" placeholder="Улица, дом, квартира">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group half">
+                            <label>Город *</label>
+                            <input type="text" id="city" value="Екатеринбург" placeholder="Город">
+                        </div>
+                        <div class="form-group half">
+                            <label>Почтовый индекс</label>
+                            <input type="text" id="zip" value="620000" placeholder="Индекс">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-step">
+                    <h2><span class="step-number">3</span> Способ доставки</h2>
+                    <div class="delivery-options">
+                        <label class="delivery-option">
+                            <input type="radio" name="delivery" value="courier" checked>
+                            <div class="delivery-option-content">
+                                <strong>Курьерская доставка</strong>
+                                <span>доставка по Екатеринбургу - 300 ₽</span>
+                            </div>
+                        </label>
+                        <label class="delivery-option">
+                            <input type="radio" name="delivery" value="pickup">
+                            <div class="delivery-option-content">
+                                <strong>Самовывоз</strong>
+                                <span>бесплатно, склад на ул. Токарей 45</span>
+                            </div>
+                        </label>
+                        <label class="delivery-option">
+                            <input type="radio" name="delivery" value="transport">
+                            <div class="delivery-option-content">
+                                <strong>Транспортная компания</strong>
+                                <span>расчет при оформлении</span>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="form-step">
+                    <h2><span class="step-number">4</span> Способ оплаты</h2>
+                    <div class="payment-options">
+                        <label class="payment-option">
+                            <input type="radio" name="payment" value="card" checked>
+                            <div class="payment-option-content">
+                                <i class="fas fa-credit-card"></i>
+                                <strong>Банковская карта</strong>
+                                <span>Visa, MasterCard, МИР</span>
+                            </div>
+                        </label>
+                        <label class="payment-option">
+                            <input type="radio" name="payment" value="cash">
+                            <div class="payment-option-content">
+                                <i class="fas fa-money-bill"></i>
+                                <strong>Наличными при получении</strong>
+                                <span>оплата курьеру</span>
+                            </div>
+                        </label>
+                        <label class="payment-option">
+                            <input type="radio" name="payment" value="invoice">
+                            <div class="payment-option-content">
+                                <i class="fas fa-file-invoice"></i>
+                                <strong>Безналичный расчет</strong>
+                                <span>для юридических лиц</span>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="form-step">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="newsletter" checked>
+                        Получать новости и специальные предложения
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="terms" required>
+                        Я согласен с <a href="#">условиями обработки заказа</a> *
+                    </label>
+                </div>
+            </div>
+            
+            <!-- Сводка заказа -->
+            <div class="order-summary">
+                <h3>Ваш заказ</h3>
+                <div class="summary-items">
+                    <div class="summary-item">
+                        <div class="item-info">
+                            <span class="item-name">Бензин АИ-95</span>
+                            <span class="item-quantity">x 20 л</span>
+                        </div>
+                        <span class="item-price">1 046 ₽</span>
+                    </div>
+                    <div class="summary-item">
+                        <div class="item-info">
+                            <span class="item-name">PEMCO Semi-Synthetic 10W-40</span>
+                            <span class="item-quantity">x 2 шт</span>
+                        </div>
+                        <span class="item-price">3 700 ₽</span>
+                    </div>
+                    <div class="summary-item">
+                        <div class="item-info">
+                            <span class="item-name">Литол-24</span>
+                            <span class="item-quantity">x 5 кг</span>
+                        </div>
+                        <span class="item-price">1 750 ₽</span>
+                    </div>
+                </div>
+                
+                <div class="summary-totals">
+                    <div class="total-line">
+                        <span>Подытог:</span>
+                        <span>6 496 ₽</span>
+                    </div>
+                    <div class="total-line">
+                        <span>Доставка:</span>
+                        <span id="deliveryCost">300 ₽</span>
+                    </div>
+                    <div class="total-line grand-total">
+                        <span>Итого:</span>
+                        <span id="grandTotal">6 796 ₽</span>
+                    </div>
+                </div>
+                
+                <button class="place-order-btn" onclick="placeOrder()">Подтвердить заказ</button>
+                <a href="cart.html" class="back-to-cart">← Вернуться в корзину</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="container footer-inner">
+        <p>© 2025 DiOil — надёжный поставщик ГСМ и топлива</p>
+        <p>Официальный дистрибьютор PEMCO, Favorit</p>
+    </div>
+</footer>
+
+<script>
+    // Обновление стоимости доставки и итога
+    document.querySelectorAll('input[name="delivery"]').forEach(radio => {
+        radio.addEventListener('change', function() {
+            const deliveryCost = this.value === 'courier' ? 300 : (this.value === 'pickup' ? 0 : 0);
+            document.getElementById('deliveryCost').innerText = deliveryCost === 0 ? 'Бесплатно' : deliveryCost + ' ₽';
+            const subtotal = 6496;
+            const total = deliveryCost === 0 ? subtotal : subtotal + deliveryCost;
+            document.getElementById('grandTotal').innerText = total + ' ₽';
+        });
+    });
+    
+    function placeOrder() {
+        const firstName = document.getElementById('firstName').value;
+        const lastName = document.getElementById('lastName').value;
+        const email = document.getElementById('email').value;
+        const phone = document.getElementById('phone').value;
+        const address = document.getElementById('address').value;
+        const city = document.getElementById('city').value;
+        const termsChecked = document.getElementById('terms').checked;
+        
+        if (!firstName || !lastName || !email || !phone || !address || !city) {
+            alert('Пожалуйста, заполните все обязательные поля');
+            return;
+        }
+        
+        if (!termsChecked) {
+            alert('Пожалуйста, согласитесь с условиями обработки заказа');
+            return;
+        }
+        
+        const delivery = document.querySelector('input[name="delivery"]:checked');
+        const payment = document.querySelector('input[name="payment"]:checked');
+        
+        alert(`Заказ оформлен!\n\nДанные доставки:\n${firstName} ${lastName}\n${address}, ${city}\n${phone}\n${email}\n\nСпособ доставки: ${delivery.parentElement.querySelector('strong').innerText}\nСпособ оплаты: ${payment.parentElement.querySelector('strong').innerText}\n\nСпасибо за покупку!`);
+        
+        // Перенаправление
+        window.location.href = 'profile.html';
+    }
+</script>
+</body>
+</html>
