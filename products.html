@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Продукция | DiOil — Витрина ГСМ и топлива</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/products.css">
+</head>
+<body>
+
+<header class="header">
+    <div class="container header-container">
+        <div class="logo">
+            <img src="logo.png" alt="DiOil" class="logo-img">
+        </div>
+        <div class="header-contacts">
+            <a href="tel:+73437770078"><i class="fas fa-phone-alt"></i> +7 (343) 777-00-78</a>
+            <a href="mailto:ddsnab@mail.ru"><i class="fas fa-envelope"></i> ddsnab@mail.ru</a>
+        </div>
+        <div class="header-actions">
+            <a href="profile.html" class="profile-icon"><i class="fas fa-user"></i></a>
+            <a href="cart.html" class="cart-icon">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count" id="cartCount">3</span>
+            </a>
+        </div>
+    </div>
+</header>
+
+<nav class="navbar">
+    <div class="container nav-container">
+        <a href="index.html">Главная</a>
+        <a href="about.html">О компании</a>
+        <a href="products.html" class="active">Продукция</a>
+        <a href="index.html#contacts">Контакты</a>
+    </div>
+</nav>
+
+<section class="page-hero">
+    <div class="container">
+        <h1>Витрина товаров</h1>
+        <p>Цены, наличие, характеристики — всё в одном месте</p>
+    </div>
+</section>
+
+<section class="catalog">
+    <div class="container">
+        
+        <!-- Поиск и фильтры -->
+        <div class="catalog-controls">
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" id="searchInput" placeholder="Поиск товаров (масло, бензин, смазка...)">
+            </div>
+            <div class="filter-box">
+                <select id="categoryFilter">
+                    <option value="all">Все категории</option>
+                    <option value="fuel">Топливо</option>
+                    <option value="oil">Масла</option>
+                    <option value="grease">Смазки и жидкости</option>
+                </select>
+                <select id="stockFilter">
+                    <option value="all">Любая доступность</option>
+                    <option value="in">В наличии</option>
+                    <option value="out">Нет в наличии</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Сетка товаров -->
+        <div class="catalog-grid" id="catalogGrid"></div>
+
+        <!-- Сообщение если ничего не найдено -->
+        <div id="noResults" class="no-results" style="display: none;">
+            <i class="fas fa-box-open"></i>
+            <p>Ничего не найдено. Попробуйте изменить запрос.</p>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="container footer-inner">
+        <p>© 2025 DiOil — надёжный поставщик ГСМ и топлива</p>
+        <p>Официальный дистрибьютор PEMCO, Favorit</p>
+    </div>
+</footer>
+
+<script>
+    // Данные товаров
+    const products = [
+        // Топливо
+        { id: 1, name: "Бензин АИ-92", category: "fuel", price: 48.5, unit: "л", stock: true, desc: "Бензин неэтилированный, класс Евро-5", image: "fuel.JPG" },
+        { id: 2, name: "Бензин АИ-95", category: "fuel", price: 52.3, unit: "л", stock: true, desc: "Премиум класс, для современных двигателей", image: "fuel.JPG" },
+        { id: 3, name: "Бензин АИ-98", category: "fuel", price: 62.1, unit: "л", stock: false, desc: "Спортивный бензин, высокое октановое число", image: "fuel.JPG" },
+        { id: 4, name: "Дизельное топливо (летнее)", category: "fuel", price: 54.7, unit: "л", stock: true, desc: "Содержание серы <10 ppm", image: "diesel.jpg" },
+        { id: 5, name: "Дизельное топливо (зимнее)", category: "fuel", price: 61.2, unit: "л", stock: true, desc: "Температура застывания до -35°C", image: "diesel.JPG" },
+        { id: 6, name: "Печное топливо", category: "fuel", price: 48.0, unit: "л", stock: true, desc: "Для отопительных систем", image: "fuel.JPG" },
+        
+        // Масла
+        { id: 7, name: "PEMCO Semi-Synthetic 10W-40", category: "oil", price: 1850, unit: "4 л", stock: true, desc: "Полусинтетическое моторное масло", image: "oil.jpg" },
+        { id: 8, name: "PEMCO Fully Synthetic 5W-30", category: "oil", price: 2450, unit: "4 л", stock: true, desc: "Полностью синтетическое, для любых погод", image: "oil.jpg" },
+        { id: 9, name: "PEMCO Fully Synthetic 5W-40", category: "oil", price: 2500, unit: "4 л", stock: false, desc: "Синтетика для мощных двигателей", image: "oil.jpg" },
+        { id: 10, name: "Favorit Mineral 15W-40", category: "oil", price: 1200, unit: "4 л", stock: true, desc: "Минеральное масло для старых двигателей", image: "oil.jpg" },
+        { id: 11, name: "Favorit Semi-Synthetic 10W-40", category: "oil", price: 1550, unit: "4 л", stock: true, desc: "Доступное качество для коммерческого транспорта", image: "oil.jpg" },
+        { id: 12, name: "Трансмиссионное масло API GL-4", category: "oil", price: 2100, unit: "4 л", stock: true, desc: "Для механических коробок передач", image: "oil.jpg" },
+        { id: 13, name: "Трансмиссионное масло API GL-5", category: "oil", price: 2300, unit: "4 л", stock: true, desc: "Для мостов и ведущих осей", image: "oil.jpg" },
+        
+        // Смазки и жидкости
+        { id: 14, name: "Литол-24", category: "grease", price: 350, unit: "кг", stock: true, desc: "Многоцелевая смазка", image: "grease.jpg" },
+        { id: 15, name: "Солидол Ж", category: "grease", price: 280, unit: "кг", stock: true, desc: "Для грубых механизмов", image: "grease.jpg" },
+        { id: 16, name: "Высокотемпературная смазка", category: "grease", price: 550, unit: "кг", stock: false, desc: "До +300°C", image: "grease.jpg" },
+        { id: 17, name: "Антифриз G11 (зелёный)", category: "grease", price: 450, unit: "5 л", stock: true, desc: "Гидратный антифриз", image: "antifreeze.jpg" },
+        { id: 18, name: "Антифриз G12 (красный)", category: "grease", price: 520, unit: "5 л", stock: true, desc: "Карбоксилатный антифриз, долгий срок службы", image: "antifreeze.jpg" },
+        { id: 19, name: "Тормозная жидкость DOT-3", category: "grease", price: 280, unit: "0.5 л", stock: true, desc: "Стандарт DOT-3", image: "brake.jpg" },
+        { id: 20, name: "Тормозная жидкость DOT-4", category: "grease", price: 350, unit: "0.5 л", stock: true, desc: "Высокая температура кипения", image: "brake.jpg" }
+    ];
+
+    // Функция рендеринга товаров
+    function renderProducts() {
+        const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+        const category = document.getElementById('categoryFilter').value;
+        const stock = document.getElementById('stockFilter').value;
+
+        const filtered = products.filter(product => {
+            const matchSearch = product.name.toLowerCase().includes(searchTerm) || 
+                                product.desc.toLowerCase().includes(searchTerm);
+            const matchCategory = category === 'all' || product.category === category;
+            const matchStock = stock === 'all' || (stock === 'in' && product.stock) || (stock === 'out' && !product.stock);
+            return matchSearch && matchCategory && matchStock;
+        });
+
+        const grid = document.getElementById('catalogGrid');
+        const noResults = document.getElementById('noResults');
+
+        if (filtered.length === 0) {
+            grid.innerHTML = '';
+            noResults.style.display = 'block';
+            return;
+        }
+
+        noResults.style.display = 'none';
+        
+        grid.innerHTML = filtered.map(product => `
+            <div class="product-card-catalog">
+                <img src="${product.image}" alt="${product.name}" class="product-image" onerror="this.src='placeholder.jpg'">
+                <h3>${product.name}</h3>
+                <p class="product-desc">${product.desc}</p>
+                <div class="product-price">
+                    ${product.price} ₽ <span>/ ${product.unit}</span>
+                </div>
+                <div class="product-stock ${product.stock ? 'in-stock' : 'out-stock'}">
+                    ${product.stock ? '✅ В наличии' : '❌ Нет в наличии'}
+                </div>
+                <button class="product-buy" onclick="alert('Макет: товар добавлен в корзину')" ${!product.stock ? 'disabled' : ''}>
+                    ${product.stock ? 'В корзину' : 'Уведомить'}
+                </button>
+            </div>
+        `).join('');
+    }
+
+    // Слушатели событий
+    document.getElementById('searchInput').addEventListener('input', renderProducts);
+    document.getElementById('categoryFilter').addEventListener('change', renderProducts);
+    document.getElementById('stockFilter').addEventListener('change', renderProducts);
+
+    // Первоначальный рендер
+    renderProducts();
+</script>
+
+</body>
+</html>

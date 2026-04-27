@@ -1,0 +1,242 @@
+/* Hero */
+.hero {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    color: white;
+    padding: 80px 0;
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size: 52px;
+    font-weight: 800;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.hero-content p {
+    font-size: 18px;
+    opacity: 0.9;
+    margin-bottom: 32px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Products (главная) */
+.products {
+    padding: 60px 0;
+    background: white;
+}
+
+.products-grid {
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.product-card {
+    flex: 1;
+    min-width: 240px;
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 28px 20px;
+    text-align: center;
+    box-shadow: 0 10px 25px -5px rgba(0,0,0,0.05);
+    transition: 0.2s;
+    border: 1px solid #eef2ff;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 30px -12px rgba(0,0,0,0.1);
+    border-color: #f59e0b40;
+}
+
+.product-icon {
+    font-size: 44px;
+    color: #f59e0b;
+    margin-bottom: 18px;
+}
+
+.product-card h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.product-card p {
+    color: #475569;
+    font-size: 14px;
+}
+
+/* Features */
+.features {
+    background-color: #f1f5f9;
+    padding: 50px 0;
+}
+
+.features-inner {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.feature {
+    flex: 1;
+    text-align: center;
+    padding: 15px;
+}
+
+.feature i {
+    font-size: 38px;
+    color: #f59e0b;
+    margin-bottom: 14px;
+}
+
+.feature h4 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.feature p {
+    color: #475569;
+}
+
+/* QR section */
+.qr-section {
+    padding: 60px 0;
+    background: white;
+}
+
+.qr-row {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.qr-card {
+    text-align: center;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 24px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+    transition: 0.2s;
+    width: 240px;
+    border: 1px solid #eef2ff;
+}
+
+.qr-card img {
+    width: 160px;
+    height: auto;
+    margin-bottom: 14px;
+}
+
+.qr-card p {
+    font-weight: 600;
+    margin-bottom: 8px;
+    font-size: 15px;
+}
+
+.qr-link {
+    display: inline-block;
+    background-color: #eef2ff;
+    padding: 6px 12px;
+    border-radius: 40px;
+    text-decoration: none;
+    color: #0f172a;
+    font-size: 12px;
+    transition: 0.2s;
+    word-break: break-all;
+}
+
+.qr-link:hover {
+    background-color: #f59e0b;
+    color: white;
+}
+
+/* Contacts */
+.contacts {
+    background-color: #f8fafc;
+    padding: 50px 0;
+    border-top: 1px solid #e2e8f0;
+}
+
+.contacts-wrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.contacts-info h3 {
+    font-size: 26px;
+    margin-bottom: 20px;
+    color: #0f172a;
+}
+
+.contacts-info p {
+    margin-bottom: 12px;
+    font-size: 15px;
+}
+
+.contacts-info i {
+    width: 26px;
+    color: #f59e0b;
+}
+
+.contacts-info a {
+    color: #1e293b;
+    text-decoration: none;
+    border-bottom: 1px dotted #cbd5e1;
+}
+
+.contacts-info a:hover {
+    color: #f59e0b;
+    border-bottom-color: #f59e0b;
+}
+
+.contacts-map {
+    text-align: center;
+    background: white;
+    padding: 20px 28px;
+    border-radius: 28px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+    border: 1px solid #eef2ff;
+}
+
+.contacts-map i {
+    font-size: 42px;
+    color: #f59e0b;
+    margin-bottom: 10px;
+}
+
+/* Responsive для главной */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 32px;
+    }
+    .products-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+    .features-inner {
+        flex-direction: column;
+    }
+    .qr-row {
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+    }
+    .contacts-wrapper {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .contacts-info {
+        text-align: center;
+    }
+}

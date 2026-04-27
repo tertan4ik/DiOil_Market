@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Корзина | DiOil</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/cart.css">
+</head>
+<body>
+
+<header class="header">
+    <div class="container header-container">
+        <div class="logo">
+            <img src="logo.png" alt="DiOil" class="logo-img">
+        </div>
+        <div class="header-contacts">
+            <a href="tel:+73437770078"><i class="fas fa-phone-alt"></i> +7 (343) 777-00-78</a>
+            <a href="mailto:ddsnab@mail.ru"><i class="fas fa-envelope"></i> ddsnab@mail.ru</a>
+        </div>
+        <div class="header-actions">
+            <a href="profile.html" class="profile-icon"><i class="fas fa-user"></i></a>
+            <a href="cart.html" class="cart-icon">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count">3</span>
+            </a>
+        </div>
+    </div>
+</header>
+
+<nav class="navbar">
+    <div class="container nav-container">
+        <a href="index.html">Главная</a>
+        <a href="about.html">О компании</a>
+        <a href="products.html">Продукция</a>
+        <a href="index.html#contacts">Контакты</a>
+    </div>
+</nav>
+
+<section class="cart-section">
+    <div class="container">
+        <h1 class="section-title">Корзина</h1>
+        <table class="cart-table">
+            <thead>
+                <tr><th>Товар</th><th>Цена</th><th>Количество</th><th>Сумма</th><th></th></tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td data-label="Товар">
+                        <div style="display: flex; align-items: center; gap: 15px;">
+                            <div class="cart-item-img"><i class="fas fa-gas-pump"></i></div>
+                            <span class="cart-item-title">Бензин АИ-95</span>
+                        </div>
+                    </td>
+                    <td data-label="Цена">52.3 ₽ / л</td>
+                    <td data-label="Количество"><input type="number" class="cart-quantity" value="20" min="1"></td>
+                    <td data-label="Сумма">1046 ₽</td>
+                    <td data-label=""><i class="fas fa-trash-alt cart-remove" onclick="alert('Макет: товар удалён')"></i></td>
+                </tr>
+                <tr>
+                    <td data-label="Товар">
+                        <div style="display: flex; align-items: center; gap: 15px;">
+                            <div class="cart-item-img"><i class="fas fa-oil-can"></i></div>
+                            <span class="cart-item-title">PEMCO Semi-Synthetic 10W-40</span>
+                        </div>
+                    </td>
+                    <td data-label="Цена">1850 ₽ / 4 л</td>
+                    <td data-label="Количество"><input type="number" class="cart-quantity" value="2" min="1"></td>
+                    <td data-label="Сумма">3700 ₽</td>
+                    <td data-label=""><i class="fas fa-trash-alt cart-remove" onclick="alert('Макет: товар удалён')"></i></td>
+                </tr>
+                <tr>
+                    <td data-label="Товар">
+                        <div style="display: flex; align-items: center; gap: 15px;">
+                            <div class="cart-item-img"><i class="fas fa-cogs"></i></div>
+                            <span class="cart-item-title">Литол-24</span>
+                        </div>
+                    </td>
+                    <td data-label="Цена">350 ₽ / кг</td>
+                    <td data-label="Количество"><input type="number" class="cart-quantity" value="5" min="1"></td>
+                    <td data-label="Сумма">1750 ₽</td>
+                    <td data-label=""><i class="fas fa-trash-alt cart-remove" onclick="alert('Макет: товар удалён')"></i></td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="cart-summary">
+            <p>Общая сумма: <span class="total">6496 ₽</span></p>
+            <button class="checkout-btn" onclick="alert('Макет: оформление заказа')">Оформить заказ</button>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="container footer-inner">
+        <p>© 2025 DiOil — надёжный поставщик ГСМ и топлива</p>
+        <p>Официальный дистрибьютор PEMCO, Favorit</p>
+    </div>
+</footer>
+
+<script>
+    document.querySelectorAll('.cart-quantity').forEach(input => {
+        input.addEventListener('change', () => alert('Макет: количество изменено'));
+    });
+</script>
+</body>
+</html>

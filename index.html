@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DiOil | Поставка ГСМ и топлива</title>
+    <!-- Шрифты и иконки (легковесные) -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+<script>
+    if (window.location.hash === "") {
+        window.scrollTo(0, 0);
+    }
+    history.scrollRestoration = "manual";
+</script>
+<header class="header">
+    <div class="container header-container">
+   <div class="logo">
+            <img src="logo.png" alt="DiOil" class="logo-img">
+        </div>
+        <div class="header-contacts">
+            <a href="tel:+73437770078"><i class="fas fa-phone-alt"></i> +7 (343) 777-00-78</a>
+            <a href="mailto:ddsnab@mail.ru"><i class="fas fa-envelope"></i> ddsnab@mail.ru</a>           
+        </div>
+                <div class="header-actions">
+            <a href="profile.html" class="profile-icon"><i class="fas fa-user"></i></a>
+            <a href="cart.html" class="cart-icon">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count" id="cartCount">3</span>
+            </a>
+        </div>
+    </div>
+</header>
+
+<nav class="navbar">
+    <div class="container nav-container">
+        <a href="#">Главная</a>
+        <a href="about.html">О компании</a>
+        <a href="products.html">Продукция</a>
+        <a href="#contacts">Контакты</a>
+    </div>
+</nav>
+
+<section class="hero">
+    <div class="container hero-content">
+        <h1>Надёжная поставка <br> ГСМ и топлива</h1>
+        <p>Масла, смазки, бензин, дизель — для вашего бизнеса без перебоев. <br> Официальный представитель <strong>PEMCO</strong> и <strong>Favorit</strong> в Свердловской области.</p>
+        <a href="products.html" class="btn-primary">Посмотреть ассортимент <i class="fas fa-arrow-right"></i></a>
+    </div>
+</section>
+
+<section class="products">
+    <div class="container">
+        <h2 class="section-title">Продукция и услуги</h2>
+        <div class="products-grid">
+            <div class="product-card">
+                <div class="product-icon"><i class="fas fa-gas-pump"></i></div>
+                <h3>Топливо</h3>
+                <p>Бензин, дизельное топливо, печное топливо. Доставка цистернами.</p>
+            </div>
+            <div class="product-card">
+                <div class="product-icon"><i class="fas fa-oil-can"></i></div>
+                <h3>Моторные масла</h3>
+                <p>PEMCO, Favorit и другие бренды. Для легковых и грузовых авто.</p>
+            </div>
+            <div class="product-card">
+                <div class="product-icon"><i class="fas fa-cogs"></i></div>
+                <h3>Смазки и технические жидкости</h3>
+                <p>Пластичные смазки, трансмиссионные, гидравлические масла.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="features">
+    <div class="container">
+        <div class="features-inner">
+            <div class="feature">
+                <i class="fas fa-check-circle"></i>
+                <h4>Официальное представительство</h4>
+                <p>Прямые контракты с заводами PEMCO и Favorit</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-clock"></i>
+                <h4>Оперативная доставка</h4>
+                <p>24/7, точное соблюдение сроков</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="qr-section">
+    <div class="container">
+        <h2 class="section-title">Будьте с нами в соцсетях</h2>
+        <div class="qr-row">
+            <div class="qr-card">
+                <img src="TG_ditreid.png" alt="QR-код Telegram">
+                <p><i class="fab fa-telegram-plane"></i> Telegram </p>
+                <a href="https://t.me/fuelandengineoil" class="qr-link">t.me/fuelandengineoil</a>
+            </div>
+            <div class="qr-card">
+                <img src="MAX_ditreid.png" alt="QR-код Макс">
+                <p><i class="fas fa-max-plane"></i> MAX </p>
+                <a href="https://max.ru/id6658554369_biz" class="qr-link">https://max.ru/id6658554369_biz</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="contacts" id="contacts">
+    <div class="container contacts-wrapper">
+        <div class="contacts-info">
+            <h3>Свяжитесь с нами</h3>
+            <p><i class="fas fa-truck"></i> <strong>Поставки топлива:</strong> <a href="tel:+79222090916">+7 922 209-09-16</a></p>
+            <p><i class="fas fa-oil-can"></i> <strong>ГСМ (масла, смазки):</strong> <a href="tel:+73437770078">+7 (343) 777-00-78</a></p>
+            <p><i class="fas fa-envelope"></i> <strong>Email:</strong> <a href="mailto:ddsnab@mail.ru">ddsnab@mail.ru</a></p>
+            <p><i class="fab fa-telegram"></i> <strong>Telegram-канал:</strong> <a href="https://t.me/fuelandengineoil">@fuelandengineoil</a></p>
+        </div>
+        <div class="contacts-map">
+            <i class="fas fa-map-marker-alt"></i>
+            <p>Екатеринбург, Свердловская область</p>
+            <small>Работаем по всему региону</small>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="container footer-inner">
+        <p>© 2025 DiOil — надёжный поставщик ГСМ и топлива</p>
+        <p>Официальный дистрибьютор PEMCO, Favorit</p>
+    </div>
+</footer>
+
+</body>
+</html>
